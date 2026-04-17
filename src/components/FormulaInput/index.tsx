@@ -49,6 +49,7 @@ export function FormulaInput({
 
   return (
     <div style={{ borderBottom: '1px solid #e5e5e5' }}>
+      <h1 className="sr-only">EML Tree Visualizer</h1>
       {/* Input + mode toggle + help */}
       <div style={{ display: 'flex', gap: 8, alignItems: 'center', padding: '10px 14px' }}>
         <input

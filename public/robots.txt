@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thecloer.github.io/eml-visualizer/sitemap.xml
