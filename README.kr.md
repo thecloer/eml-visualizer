@@ -16,7 +16,7 @@
 
 ## EML 연산자란?
 
-$$\operatorname{eml}(x,\, y) = e^x - \ln y$$
+$$\mathrm{eml}(x,\, y) = e^x - \ln y$$
 
 이 하나의 연산자와 두 가지 단말 노드(상수 `1`, 변수 `x`)만으로 복소수 평면 위의 모든 초등 함수를 이진 트리로 표현할 수 있습니다.
 
@@ -28,15 +28,15 @@ S  →  1  |  x  |  eml(S, S)
 
 | 함수       | EML 이진 트리                                                             | RPN       | K   |
 | ---------- | ------------------------------------------------------------------------- | --------- | --- |
-| $e$        | $\operatorname{eml}(1,\ 1)$                                               | `11E`     | 3   |
-| $e^x$      | $\operatorname{eml}(x,\ 1)$                                               | `x1E`     | 3   |
-| $\ln x$    | $\operatorname{eml}(1,\ \operatorname{eml}(\operatorname{eml}(1,x),\ 1))$ | `11xE1EE` | 7   |
+| $e$        | $\mathrm{eml}(1,\ 1)$                                               | `11E`     | 3   |
+| $e^x$      | $\mathrm{eml}(x,\ 1)$                                               | `x1E`     | 3   |
+| $\ln x$    | $\mathrm{eml}(1,\ \mathrm{eml}(\mathrm{mathrm{eml}(1,x),\ 1))$ | `11xE1EE` | 7   |
 | $\sqrt{x}$ | $\exp(\frac{1}{2}\ln x)$를 EML 빌딩블록으로 전개                          | —         | 139 |
-| $-x$       | $\operatorname{sub}(0,\ x)$를 EML 빌딩블록으로 전개                       | —         | 17  |
+| $-x$       | $\mathrm{sub}(0,\ x)$를 EML 빌딩블록으로 전개                       | —         | 17  |
 
 K는 RPN 프로그램의 길이로, 트리의 최소 표현 크기(Kolmogorov 복잡도)에 해당합니다.
 
-**비가환성:** $\operatorname{eml}(x,y) \neq \operatorname{eml}(y,x)$ — 좌/우 입력의 순서가 결과를 결정합니다. 트리에서 왼쪽 엣지는 `exp` 경로, 오른쪽 엣지는 `ln` 경로입니다.
+**비가환성:** $\mathrm{eml}(x,y) \neq \mathrm{eml}(y,x)$ — 좌/우 입력의 순서가 결과를 결정합니다. 트리에서 왼쪽 엣지는 `exp` 경로, 오른쪽 엣지는 `ln` 경로입니다.
 
 ---
 

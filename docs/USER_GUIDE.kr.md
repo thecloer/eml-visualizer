@@ -30,7 +30,7 @@
 
 Odrzywołek의 2026년 논문은 바로 그 연산자를 발견했습니다.
 
-$$\operatorname{eml}(x,\, y) = e^x - \ln y$$
+$$\mathrm{eml}(x,\, y) = e^x - \ln y$$
 
 이 하나의 연산자와 두 가지 단말 노드 — 상수 **1** 과 변수 **x** — 만 있으면, 아래 단순한 문법이 복소수 평면 위의 모든 초등 함수를 이진 트리로 생성합니다.
 
@@ -42,9 +42,9 @@ S  →  1  |  x  |  eml(S, S)
 
 | 함수            | EML 표현                                                                       |
 | --------------- | ------------------------------------------------------------------------------ |
-| $e^x$           | $\operatorname{eml}(x,\; 1)$                                                   |
-| $e$ (오일러 수) | $\operatorname{eml}(1,\; 1)$                                                   |
-| $\ln x$         | $\operatorname{eml}(1,\; \operatorname{eml}(\operatorname{eml}(1,\; x),\; 1))$ |
+| $e^x$           | $\mathrm{eml}(x,\; 1)$                                                   |
+| $e$ (오일러 수) | $\mathrm{eml}(1,\; 1)$                                                   |
+| $\ln x$         | $\mathrm{eml}(1,\; \mathrm{eml}(\mathrm{eml}(1,\; x),\; 1))$ |
 | $-x$            | 위 세 가지를 조합한 깊이 8의 트리                                              |
 | $\sqrt{x}$      | 깊이 33의 트리                                                                 |
 
@@ -205,7 +205,7 @@ This function likely requires a much deeper EML tree.
 - **왼쪽 엣지 (exp):** 이 자식 노드의 값이 `exp(·)` 안으로 들어갑니다
 - **오른쪽 엣지 (ln):** 이 자식 노드의 값이 `ln(·)` 안으로 들어갑니다
 
-$\operatorname{eml}(x, y) = e^x - \ln y$ 이므로, 왼쪽과 오른쪽이 **반드시 다른 역할**을 합니다.
+$\mathrm{eml}(x, y) = e^x - \ln y$ 이므로, 왼쪽과 오른쪽이 **반드시 다른 역할**을 합니다.
 
 ### 캔버스 조작
 
@@ -483,21 +483,21 @@ A: K=13까지 약 20,134개의 후보를 탐색합니다. 보통 1초 이내에 
 
 ### exp(x) = eml(x, 1)
 
-$$\operatorname{eml}(x, 1) = e^x - \ln 1 = e^x - 0 = e^x \checkmark$$
+$$\mathrm{eml}(x, 1) = e^x - \ln 1 = e^x - 0 = e^x \checkmark$$
 
 ### ln(x) = eml(1, eml(eml(1, x), 1))
 
-$$\operatorname{eml}(1, x) = e^1 - \ln x = e - \ln x$$
-$$\operatorname{eml}(e - \ln x,\ 1) = e^{e - \ln x} - 0 = \frac{e^e}{x}$$
+$$\mathrm{eml}(1, x) = e^1 - \ln x = e - \ln x$$
+$$\mathrm{eml}(e - \ln x,\ 1) = e^{e - \ln x} - 0 = \frac{e^e}{x}$$
 
 잠깐, 이것은 우변이 $\frac{e^e}{x}$입니다. 다시 올바르게 전개합니다:
 
-$$\operatorname{eml}(\operatorname{eml}(1,x),\ 1) = \exp(\operatorname{eml}(1,x)) - \ln(1) = \exp(e - \ln x)$$
-$$\operatorname{eml}(1,\ \exp(e - \ln x)) = e - \ln(\exp(e - \ln x)) = e - (e - \ln x) = \ln x \checkmark$$
+$$\mathrm{eml}(\mathrm{eml}(1,x),\ 1) = \exp(\mathrm{eml}(1,x)) - \ln(1) = \exp(e - \ln x)$$
+$$\mathrm{eml}(1,\ \exp(e - \ln x)) = e - \ln(\exp(e - \ln x)) = e - (e - \ln x) = \ln x \checkmark$$
 
 ### e = eml(1, 1)
 
-$$\operatorname{eml}(1, 1) = e^1 - \ln 1 = e - 0 = e \checkmark$$
+$$\mathrm{eml}(1, 1) = e^1 - \ln 1 = e - 0 = e \checkmark$$
 
 ---
 

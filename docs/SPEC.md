@@ -4,7 +4,7 @@
 
 ### 1.1 목적
 
-Andrzej Odrzywołek의 논문 "All elementary functions from a single binary operator" (arXiv:2603.21852)를 기반으로, 단일 이항 연산자 $\operatorname{eml}(x, y) = e^x - \ln y$ 와 단말 노드 $\{1,\, x\}$만으로 모든 초등 함수를 이진 트리로 표현하는 과정을 브라우저에서 인터랙티브하게 탐구하는 시각화 도구를 제공합니다.
+Andrzej Odrzywołek의 논문 "All elementary functions from a single binary operator" (arXiv:2603.21852)를 기반으로, 단일 이항 연산자 $\mathrm{eml}(x, y) = e^x - \ln y$ 와 단말 노드 $\{1,\, x\}$만으로 모든 초등 함수를 이진 트리로 표현하는 과정을 브라우저에서 인터랙티브하게 탐구하는 시각화 도구를 제공합니다.
 
 ### 1.2 핵심 수학 배경
 
@@ -18,7 +18,7 @@ S → 1 | x | eml(S, S)
 eml(x, y) = exp(x) − ln(y)
 ```
 
-**비가환성:** $\operatorname{eml}(x,y) \neq \operatorname{eml}(y,x)$이므로, 트리에서 왼쪽·오른쪽 자식의 구분이 핵심 정보입니다.
+**비가환성:** $\mathrm{eml}(x,y) \neq \mathrm{eml}(y,x)$이므로, 트리에서 왼쪽·오른쪽 자식의 구분이 핵심 정보입니다.
 
 **RPN 표기법:** 트리를 후위 순회하여 단말 노드는 그 값(1, x)으로, eml 연산 노드는 `E`로 직렬화합니다.
 

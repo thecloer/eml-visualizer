@@ -30,7 +30,7 @@ What if every elementary function — exponentials, logarithms, trigonometric fu
 
 Odrzywołek's 2026 paper identifies exactly such an operator:
 
-$$\operatorname{eml}(x,\, y) = e^x - \ln y$$
+$$\mathrm{eml}(x,\, y) = e^x - \ln y$$
 
 With this one operator and two terminal nodes — the constant **1** and the variable **x** — the following simple grammar generates every elementary function over the complex plane as a binary tree:
 
@@ -42,9 +42,9 @@ S  →  1  |  x  |  eml(S, S)
 
 | Function             | EML expression                                                                 |
 | -------------------- | ------------------------------------------------------------------------------ |
-| $e^x$                | $\operatorname{eml}(x,\; 1)$                                                   |
-| $e$ (Euler's number) | $\operatorname{eml}(1,\; 1)$                                                   |
-| $\ln x$              | $\operatorname{eml}(1,\; \operatorname{eml}(\operatorname{eml}(1,\; x),\; 1))$ |
+| $e^x$                | $\mathrm{eml}(x,\; 1)$                                                   |
+| $e$ (Euler's number) | $\mathrm{eml}(1,\; 1)$                                                   |
+| $\ln x$              | $\mathrm{mathrm{eml}(1,\; \mathrm{eml}(\mathrm{eml}(1,\; x),\; 1))$ |
 | $-x$                 | Depth-8 tree built from the above                                              |
 | $\sqrt{x}$           | Depth-33 tree                                                                  |
 
@@ -206,7 +206,7 @@ Every edge is labeled either `exp` or `ln`. This makes the **non-commutativity**
 - **Left edge (exp):** the child's value is passed into $e^{(\cdot)}$
 - **Right edge (ln):** the child's value is passed into $\ln(\cdot)$
 
-Since $\operatorname{eml}(x,y) = e^x - \ln y$, swapping left and right gives a completely different function.
+Since $\mathrm{eml}(x,y) = e^x - \ln y$, swapping left and right gives a completely different function.
 
 ### Canvas Navigation
 
@@ -483,27 +483,27 @@ Typically under one second for K≤13 (20,134 candidates). If you type a new for
 
 ### exp(x) = eml(x, 1)
 
-$$\operatorname{eml}(x, 1) = e^x - \ln 1 = e^x - 0 = e^x \checkmark$$
+$$\mathrm{eml}(x, 1) = e^x - \ln 1 = e^x - 0 = e^x \checkmark$$
 
 ### ln(x) = eml(1, eml(eml(1, x), 1))
 
-Step 1: $\operatorname{eml}(1, x) = e^1 - \ln x = e - \ln x$
+Step 1: $\mathrm{eml}(1, x) = e^1 - \ln x = e - \ln x$
 
-Step 2: $\operatorname{eml}(e - \ln x,\ 1) = \exp(e - \ln x) - 0 = \exp(e - \ln x)$
+Step 2: $\mathrm{eml}(e - \ln x,\ 1) = \exp(e - \ln x) - 0 = \exp(e - \ln x)$
 
-Step 3: $\operatorname{eml}(1,\ \exp(e - \ln x)) = e - \ln(\exp(e - \ln x)) = e - (e - \ln x) = \ln x \checkmark$
+Step 3: $\mathrm{eml}(1,\ \exp(e - \ln x)) = e - \ln(\exp(e - \ln x)) = e - (e - \ln x) = \ln x \checkmark$
 
 ### e = eml(1, 1)
 
-$$\operatorname{eml}(1, 1) = e^1 - \ln 1 = e - 0 = e \checkmark$$
+$$\mathrm{eml}(1, 1) = e^1 - \ln 1 = e - 0 = e \checkmark$$
 
 ### neg(x) = sub(zero, x)
 
-$$\operatorname{zero} = \operatorname{eml}(1,\ \exp(e)) = e^1 - \ln(\exp(e)) = e - e = 0$$
+$$\mathrm{zero} = \mathrm{eml}(1,\ \exp(e)) = e^1 - \ln(\exp(e)) = e - e = 0$$
 
-$$\operatorname{sub}(a, b) = \operatorname{eml}(\ln a,\ \exp b) = \exp(\ln a) - \ln(\exp b) = a - b$$
+$$\mathrm{sub}(a, b) = \mathrm{eml}(\ln a,\ \exp b) = \exp(\ln a) - \ln(\exp b) = a - b$$
 
-$$\operatorname{neg}(x) = \operatorname{sub}(0, x) = 0 - x = -x \checkmark$$
+$$\mathrm{neg}(x) = \mathrm{sub}(0, x) = 0 - x = -x \checkmark$$
 
 ---
 

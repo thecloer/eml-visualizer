@@ -16,7 +16,7 @@ An interactive browser-based visualizer that explores how every elementary funct
 
 ## What is the EML Operator?
 
-$$\operatorname{eml}(x,\, y) = e^x - \ln y$$
+$$\mathrm{eml}(x,\, y) = e^x - \ln y$$
 
 With just this one binary operator and two terminal nodes — the constant `1` and the variable `x` — the following grammar generates every elementary function over the complex plane as a binary tree:
 
@@ -28,15 +28,15 @@ This is the central result of Odrzywołek's 2026 paper. Some examples:
 
 | Function   | EML binary tree                                                           | RPN       | K   |
 | ---------- | ------------------------------------------------------------------------- | --------- | --- |
-| $e$        | $\operatorname{eml}(1,\ 1)$                                               | `11E`     | 3   |
-| $e^x$      | $\operatorname{eml}(x,\ 1)$                                               | `x1E`     | 3   |
-| $\ln x$    | $\operatorname{eml}(1,\ \operatorname{eml}(\operatorname{eml}(1,x),\ 1))$ | `11xE1EE` | 7   |
+| $e$        | $\mathrm{eml}(1,\ 1)$                                               | `11E`     | 3   |
+| $e^x$      | $\mathrm{eml}(x,\ 1)$                                               | `x1E`     | 3   |
+| $\ln x$    | $\mathrm{eml}(1,\ \mathrm{eml}(\mathrm{eml}(1,x),\ 1))$ | `11xE1EE` | 7   |
 | $\sqrt{x}$ | Expanded via EML building blocks                                          | —         | 139 |
-| $-x$       | $\operatorname{sub}(0,\ x)$ via EML building blocks                       | —         | 17  |
+| $-x$       | $\mathrm{sub}(0,\ x)$ via EML building blocks                       | —         | 17  |
 
 **K** is the length of the RPN program — the minimum description length of the tree, corresponding to Kolmogorov complexity in the EML model.
 
-**Non-commutativity:** $\operatorname{eml}(x,y) \neq \operatorname{eml}(y,x)$ — the order of left and right inputs determines the result. In the tree, the left edge is the `exp` path and the right edge is the `ln` path.
+**Non-commutativity:** $\mathrm{eml}(x,y) \neq \mathrm{eml}(y,x)$ — the order of left and right inputs determines the result. In the tree, the left edge is the `exp` path and the right edge is the `ln` path.
 
 ---
 
