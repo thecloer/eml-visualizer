@@ -73,6 +73,7 @@ export function EmlViewer({ tree, paramX: _paramX }: Props) {
         <Background color="#e8e8e8" gap={20} />
         <Controls position="bottom-left" />
         <MiniMap
+          className="responsive-minimap"
           position="bottom-right"
           nodeColor={(n) => (n.type === 'emlLeaf' ? '#0066FF' : '#333')}
           maskColor="rgba(255,255,255,0.85)"

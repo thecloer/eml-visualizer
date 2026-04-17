@@ -50,12 +50,12 @@ export function HelpModal({ open, onClose }: Props) {
       >
         {/* Header */}
         <div style={{
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10,
           padding: '14px 20px',
           borderBottom: '1px solid #e5e5e5',
           flexShrink: 0,
         }}>
-          <span style={{ fontFamily: 'monospace', fontSize: 14, fontWeight: 600, color: '#111' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: 14, fontWeight: 600, color: '#111', flex: 1, whiteSpace: 'normal', lineHeight: 1.3 }}>
             EML Tree Visualizer — User Guide
           </span>
           <button

@@ -18,6 +18,7 @@ export function ExportBar({ result }: Props) {
 
   return (
     <div
+      className="export-bar"
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -45,7 +46,7 @@ export function ExportBar({ result }: Props) {
       </code>
 
       {result && (
-        <span style={{ fontSize: 11, color: '#888', fontFamily: 'monospace', flexShrink: 0 }}>
+        <span className="export-stats" style={{ fontSize: 11, color: '#888', fontFamily: 'monospace', flexShrink: 0 }}>
           K={result.rpn.length} · {result.nodeCount} nodes · depth {result.depth}
           {result.isOptimal && ' · ✓ optimal'}
         </span>

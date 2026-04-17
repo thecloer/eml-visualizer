@@ -51,7 +51,7 @@ export function FormulaInput({
     <div style={{ borderBottom: '1px solid #e5e5e5' }}>
       <h1 className="sr-only">EML Tree Visualizer</h1>
       {/* Input + mode toggle + help */}
-      <div style={{ display: 'flex', gap: 8, alignItems: 'center', padding: '10px 14px' }}>
+      <div className="formula-tools" style={{ display: 'flex', gap: 8, alignItems: 'center', padding: '10px 14px' }}>
         <input
           value={value}
           onChange={handleChange}
@@ -61,6 +61,7 @@ export function FormulaInput({
           autoComplete="off"
           style={{
             flex: 1,
+            minWidth: 0,
             fontFamily: 'monospace',
             fontSize: 15,
             padding: '6px 10px',
@@ -109,7 +110,7 @@ export function FormulaInput({
 
 function ModeToggle({ mode, onChange }: { mode: CompileMode; onChange: (m: CompileMode) => void }) {
   return (
-    <div style={{ display: 'flex', border: '1.5px solid #ccc', borderRadius: 6, overflow: 'hidden', flexShrink: 0 }}>
+    <div className="mode-toggle" style={{ display: 'flex', border: '1.5px solid #ccc', borderRadius: 6, overflow: 'hidden', flexShrink: 0 }}>
       {(['standard', 'optimized'] as const).map(m => (
         <button
           key={m}

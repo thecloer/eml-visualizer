@@ -6,6 +6,7 @@ body {
   color: #111;
   font-family: system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
 }
 
 #root {
@@ -13,6 +14,7 @@ body {
   height: 100dvh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 button { cursor: pointer; }
@@ -28,4 +30,35 @@ button { cursor: pointer; }
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Responsive UI Tweaks */
+@media (max-width: 600px) {
+  .formula-tools {
+    gap: 4px !important;
+    padding: 8px 10px !important;
+  }
+  .formula-tools input {
+    font-size: 14px !important;
+    padding: 6px 8px !important;
+  }
+  .mode-toggle button {
+    padding: 5px 8px !important;
+    font-size: 10px !important;
+  }
+  .export-bar {
+    flex-wrap: wrap;
+    padding: 8px 12px !important;
+  }
+  .export-stats {
+    width: 100%;
+    order: 3;
+    padding-top: 6px;
+    margin-top: 2px;
+    border-top: 1px dashed #e5e5e5;
+  }
+  .responsive-minimap {
+    width: 120px !important;
+    height: 90px !important;
+  }
 }
